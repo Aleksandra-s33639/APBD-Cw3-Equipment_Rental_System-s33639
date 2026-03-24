@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Domeny\" />
       <Folder Include="Struktury\" />
     </ItemGroup>
 
