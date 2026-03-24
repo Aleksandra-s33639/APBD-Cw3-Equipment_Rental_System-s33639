@@ -33,7 +33,8 @@ public class SerwisWypozyczen {
 
         wyp.Zwroc();
         wyp.Sprzecik.CzyDostepny = true;
-
+        Console.WriteLine("Zwrocono sprzecik! :D");
+        
         return wyp.ObliczKare();
     }
 
@@ -42,4 +43,9 @@ public class SerwisWypozyczen {
 
     public List<Wypozyczenie> Przeterminowane()
         => _wypozyczenia.Where(w => w.CzyPrzeterminowane()).ToList();
+    
+    public string Raport()
+    {
+        return $"Sprzęcik: {_sprzeciki.Count}, Dostępny: {_sprzeciki.Count(s => s.CzyDostepny)}";
+    }
 }

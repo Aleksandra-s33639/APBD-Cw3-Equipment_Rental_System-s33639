@@ -22,3 +22,5 @@ catch (Exception e)
 
 var kara = serwis.Zwroc(laptop.Id);
 Console.WriteLine($"Kara: {kara}");
+
+Console.WriteLine(serwis.Raport());
