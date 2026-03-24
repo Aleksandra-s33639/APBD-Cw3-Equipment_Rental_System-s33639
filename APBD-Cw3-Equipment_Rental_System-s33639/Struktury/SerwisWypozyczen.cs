@@ -7,8 +7,8 @@ public class SerwisWypozyczen {
     private readonly List<Osoba> _osoby = new();
     private readonly List<Wypozyczenie> _wypozyczenia = new();
 
-    public void DodajSprzet(Sprzecik s) => _sprzeciki.Add(s);
-    public void DodajUzytkownika(Osoba u) => _osoby.Add(u);
+    public void DodajSprzecik(Sprzecik s) => _sprzeciki.Add(s);
+    public void DodajOsobe(Osoba u) => _osoby.Add(u);
 
     public void Wypozycz(Guid sprzecikId, Guid osobaId, int dni) {
         var sprzet = _sprzeciki.First(s => s.Id == sprzecikId);
@@ -25,6 +25,7 @@ public class SerwisWypozyczen {
         var wyp = new Wypozyczenie(sprzet, user, dni);
         sprzet.CzyDostepny = false;
         _wypozyczenia.Add(wyp);
+        Console.WriteLine("Wypozyczono sprzecik! :D");
     }
 
     public decimal Zwroc(Guid sprzetId) {
